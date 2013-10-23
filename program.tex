@@ -1,25 +1,39 @@
 \documentclass{article}
 \usepackage[cp1251]{inputenc}
 \usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts}
+\usepackage{graphicx,color}
+\usepackage[makeroom]{cancel}
 \begin{document}
 
-Рассматриваем лестничные ряды, составленные из изображенных на рисунке ... блоков.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{ladder.eps}
+\caption{Блок лестничной диаграммы}
+\label{ladder}
+\end{figure}
+
+Рассматриваем лестничные ряды, составленные из изображенных на рисунке \ref{ladder} блоков.
 В статьях по дуальной технике в узлах диаграмм стоят вершинные части примесной задачи, а линиями служат дуальные функции Грина.
 Нам будет удобнее в узлах разместить неприводимые части функций Грина, а линии, соответственно, домножить на $g^{-2}$.
 
 Таким образом, ``четырехугольный'' узел равен
 \begin{equation}
-g^{(2irr)}_{1234}=<c^\dag_1 c_2 c^\dag_3 c_4>-<c^\dag_1 c_2>< c^\dag_3 c_4>+<c^\dag_1 c_4>< c^\dag_3 c_2>
+\begin{split}
+g^{(2irr)}_{1234}
+ &= \left<c^\dag_\downarrow(t+\tau) c_\uparrow(t) c^\dag_\uparrow(\tau') c_\downarrow(0)\right> \\
+ &- \cancel{\left<c^\dag_\downarrow(t+\tau) c_\uparrow(t)\right>\left< c^\dag_\uparrow(\tau') c_\downarrow(0)\right>} \\
+ &+ \left<c^\dag_\downarrow(t+\tau) c_\downarrow(0)\right>\left< c^\dag_\uparrow(\tau') c_\uparrow(t)\right>
+\end{split}
 \end{equation}
- (для соответствующей рисунку ... комбинации спинов одна из приводимых частей обращается в нуль).
 
 Линия, в нулевом приближении, равна
 \begin{equation}
-g^{-2}_\omega \tilde{G}^{(0)}_{\omega k}=(g_\omega-\epsilon^{-1}_k)^{-1}, 
-\end{equation}
-где 
-\begin{equation}
-\epsilon_k=2 t (\cos k_x+\cos k_y).
+\begin{split}
+&\tilde{G}_{\omega k} = g^{-2}_\omega \tilde{G}^{(0)}_{\omega k} = (g_\omega-\epsilon^{-1}_k)^{-1},\;\text{где} \\
+g_\omega &= \int_0^\beta \mathrm{d}\tau \left< c^\dag_\uparrow(\tau)c_\uparrow(0) \right> e^{i\omega\tau} = \frac{i\omega}{\omega^2+\mu^2} \\
+\epsilon_k &= 2 t (\cos k_x+\cos k_y).
+\end{split}
 \end{equation}
 
 Лестница в целом характеризуется волновым вектором $K$ и частотой $\Omega$. ``Внутренние'' индексы 
@@ -27,21 +41,25 @@ g^{-2}_\omega \tilde{G}^{(0)}_{\omega k}=(g_\omega-\epsilon^{-1}_k)^{-1},
 
 Таким образом, нам понадобятся величины 
 \begin{equation}
-X^{(0)}_{\Omega K \tau}=\beta^{-1} \sum_\omega \tilde{G}_{\omega k} \tilde{G}_{\Omega+\omega K+k} e^{-i \omega \tau}
+X^{(0)}_{\Omega K \tau} = \beta^{-1} {\color{red} \int_? \mathrm{d}^2k} \sum_\omega \tilde{G}_{\omega k} \tilde{G}_{\substack{\Omega+\omega\\K+k}} e^{-i \omega \tau},
 \end{equation}
+где суммирование идёт по матсубаровским частотам $\omega_n = \frac{(2n+1)\pi}{\beta}, n\in\mathbb{Z}$.
 
 \begin{equation}
-g^{(2irr)}_{\Omega \tau \tau'} = \int g^{(2irr)}_{ t+\tau\downarrow, t\uparrow,\tau'\uparrow,0\downarrow}  e^{i\Omega t} dt.
+g^{(2irr)}_{\Omega \tau \tau'} = \int_0^\beta g^{(2irr)}_{ t+\tau\downarrow, t\uparrow,\tau'\uparrow,0\downarrow}  e^{i\Omega t} dt.
 \end{equation}
-{\it вроде, правильно индексы расставлены, но надо будет перепроверять}
 
 Обсуждаемый блок представляет собой свертку
 \begin{equation}
-\int  X^{(0)}_{\Omega K \tau-\tau_1} g^{(2irr)}_{\Omega \tau_1 \tau'} d\tau_1
+\int_0^\beta  X^{(0)}_{\Omega K \tau-\tau_1} g^{(2irr)}_{\Omega \tau_1 \tau'} d\tau_1
 \end{equation}
 
-{\bf задача 1}. Хочется посмотреть на 3D график $g^{(2irr)}_{\Omega \tau \tau'}$ при $\Omega=0$, и на график $X^{(0)}_{\Omega K \tau}$ при $\Omega=0$ для нескольких характерных $K$. 
+{\bf Задача 1}. Хочется посмотреть на 3D график $g^{(2irr)}_{\Omega \tau \tau'}$ при $\Omega=0$, и на график $X^{(0)}_{\Omega K \tau}$ при $\Omega=0$ для нескольких характерных $K$. 
 
-
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{g2irr.eps}
+\caption[$g^{(2irr)}_{0 \tau \tau'}$]{3D график $g^{(2irr)}_{0 \tau \tau'}$}
+\end{figure}
 	
 \end{document}
