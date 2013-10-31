@@ -1,0 +1,1234 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     47434,       1225]
+NotebookOptionsPosition[     32377,        900]
+NotebookOutlinePosition[     46644,       1197]
+CellTagsIndexPosition[     46601,       1194]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"girr", "=", 
+   RowBox[{
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"x1", "=", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", 
+           RowBox[{"\[Tau]2", "+", "\[Tau]1"}], ",", 
+           RowBox[{"-", "1"}]}], "}"}]}], ",", 
+        RowBox[{"x2", "=", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "\[Tau]2", ",", "1"}], "}"}]}], ",", 
+        RowBox[{"x3", "=", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "\[Tau]3", ",", "1"}], "}"}]}], ",", 
+        RowBox[{"x4", "=", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0", ",", 
+           RowBox[{"-", "1"}]}], "}"}]}], ",", 
+        RowBox[{"U", "=", 
+         RowBox[{"2", "\[Mu]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"\[LeftAngleBracket]", 
+        RowBox[{
+         SubsuperscriptBox["c", "x1", "\[Dagger]"], "\[CenterDot]", 
+         SubscriptBox["c", "x2"], "\[CenterDot]", 
+         SubsuperscriptBox["c", "x3", "\[Dagger]"], "\[CenterDot]", 
+         SubscriptBox["c", "x4"]}], "\[RightAngleBracket]"}], "-", 
+       RowBox[{
+        RowBox[{"\[LeftAngleBracket]", 
+         RowBox[{
+          SubsuperscriptBox["c", "x1", "\[Dagger]"], "\[CenterDot]", 
+          SubscriptBox["c", "x2"]}], "\[RightAngleBracket]"}], 
+        RowBox[{"\[LeftAngleBracket]", 
+         RowBox[{
+          SubsuperscriptBox["c", "x3", "\[Dagger]"], "\[CenterDot]", 
+          SubscriptBox["c", "x4"]}], "\[RightAngleBracket]"}]}], "+", 
+       RowBox[{
+        RowBox[{"\[LeftAngleBracket]", 
+         RowBox[{
+          SubsuperscriptBox["c", "x1", "\[Dagger]"], "\[CenterDot]", 
+          SubscriptBox["c", "x4"]}], "\[RightAngleBracket]"}], 
+        RowBox[{"\[LeftAngleBracket]", 
+         RowBox[{
+          SubsuperscriptBox["c", "x3", "\[Dagger]"], "\[CenterDot]", 
+          SubscriptBox["c", "x2"]}], "\[RightAngleBracket]"}]}]}]}], "]"}], "//", 
+    RowBox[{
+     RowBox[{"F", "[", 
+      RowBox[{"#", ",", "\[Tau]2", ",", "\[Beta]", ",", "\[Omega]2"}], "]"}], 
+     "&"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"girr", "=", 
+  RowBox[{"girr", "/.", 
+   RowBox[{"\[Omega]2", "\[Rule]", "\[CapitalOmega]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.591434306297903*^9, 3.59143447677251*^9}, {
+  3.591434576523768*^9, 3.591434703639845*^9}, {3.591434736235237*^9, 
+  3.591434748731271*^9}, {3.591523437760107*^9, 3.591523442981986*^9}, {
+  3.591523503690415*^9, 3.591523580739093*^9}, {3.591524047861326*^9, 
+  3.5915240571193037`*^9}, {3.591524706940483*^9, 3.5915247097308407`*^9}, {
+  3.5915248004756804`*^9, 3.591524822364687*^9}, {3.591524962409219*^9, 
+  3.591524964372411*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}], "-", 
+      RowBox[{"\[Mu]", " ", "\[Tau]1"}], "+", 
+      RowBox[{"\[Mu]", " ", "\[Tau]3"}]}]], 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"2", "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{
+           RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "\[Mu]"}], "+", 
+       RowBox[{"\[ImaginaryI]", " ", "\[CapitalOmega]"}]}], ")"}]}]]}], "+", 
+  FractionBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}], "-", 
+     RowBox[{"\[Mu]", " ", "\[Tau]1"}], "+", 
+     RowBox[{"\[Mu]", " ", "\[Tau]3"}], "+", 
+     RowBox[{"\[Beta]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "2"}], " ", "\[Mu]"}], "+", 
+        RowBox[{"\[ImaginaryI]", " ", "\[CapitalOmega]"}]}], ")"}]}]}]], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[Mu]"}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", "\[CapitalOmega]"}]}], ")"}]}]], "-", 
+  FractionBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}], "+", 
+     RowBox[{"\[Mu]", " ", "\[Tau]1"}], "-", 
+     RowBox[{"\[Mu]", " ", "\[Tau]3"}]}]], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", "\[Mu]"}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", "\[CapitalOmega]"}]}], ")"}]}]], "+", 
+  FractionBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}], "+", 
+     RowBox[{"\[Mu]", " ", "\[Tau]1"}], "-", 
+     RowBox[{"\[Mu]", " ", "\[Tau]3"}], "+", 
+     RowBox[{"\[Beta]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", "\[Mu]"}], "+", 
+        RowBox[{"\[ImaginaryI]", " ", "\[CapitalOmega]"}]}], ")"}]}]}]], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", "\[Mu]"}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", "\[CapitalOmega]"}]}], ")"}]}]], "+", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[Mu]"}], " ", "\[Tau]1"}], "-", 
+      RowBox[{"\[Mu]", " ", "\[Tau]3"}]}]]}], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    "\[CapitalOmega]"}]], "+", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[Beta]", " ", "\[Mu]"}], "+", 
+      RowBox[{"\[Mu]", " ", "\[Tau]1"}], "+", 
+      RowBox[{"\[Mu]", " ", "\[Tau]3"}]}]]}], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    "\[CapitalOmega]"}]], "-", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[Mu]"}], " ", "\[Tau]1"}], "-", 
+      RowBox[{"\[Mu]", " ", "\[Tau]3"}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", "\[Beta]", " ", "\[CapitalOmega]"}]}]]}], 
+   
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    "\[CapitalOmega]"}]], "-", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[Beta]", " ", "\[Mu]"}], "+", 
+      RowBox[{"\[Mu]", " ", "\[Tau]1"}], "+", 
+      RowBox[{"\[Mu]", " ", "\[Tau]3"}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", "\[Beta]", " ", "\[CapitalOmega]"}]}]]}], 
+   
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], "2"], " ", 
+    "\[CapitalOmega]"}]], "+", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[Mu]"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"\[Tau]1", "+", "\[Tau]3"}], ")"}]}]]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"2", "+", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], " ", 
+    "\[CapitalOmega]"}]], "-", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[Mu]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"\[Tau]1", "+", "\[Tau]3"}], ")"}]}], "+", 
+      RowBox[{"\[ImaginaryI]", " ", "\[Beta]", " ", "\[CapitalOmega]"}]}]]}], 
+   
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"2", "+", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "\[Beta]"}], " ", "\[Mu]"}]]}]}], ")"}], " ", 
+    "\[CapitalOmega]"}]]}]], "Output",
+ CellChangeTimes->{
+  3.591434335845271*^9, {3.591434382074935*^9, 3.5914343914349546`*^9}, {
+   3.591434443647642*^9, 3.591434477893774*^9}, 3.591434616227261*^9, {
+   3.591434694962893*^9, 3.591434704985505*^9}, 3.591434749870173*^9, 
+   3.591521284542247*^9, {3.591521341765356*^9, 3.591521355441349*^9}, 
+   3.5915213866260033`*^9, 3.591523443358994*^9, {3.591523563076767*^9, 
+   3.5915235830909452`*^9}, {3.591524054738247*^9, 3.591524057868267*^9}, 
+   3.5915247146987047`*^9, {3.591524812183757*^9, 3.5915248252663307`*^9}, {
+   3.59152494656726*^9, 3.5915249656050463`*^9}, {3.591959705720778*^9, 
+   3.591959738555172*^9}, 3.5921996903851223`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g2irr", "[", 
+   RowBox[{"\[Tau]1_", ",", "\[Tau]3_", ",", "\[Mu]_", ",", "\[Beta]_"}], 
+   "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Limit", "[", 
+     RowBox[{"girr", ",", 
+      RowBox[{"\[CapitalOmega]", "\[Rule]", "0"}]}], "]"}], "//", 
+    "matsubara"}], "//", "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.591524626676433*^9, 3.591524640654098*^9}, {
+  3.59152472374254*^9, 3.591524751655945*^9}, {3.591524806873322*^9, 
+  3.591524847330995*^9}, {3.591524879887525*^9, 3.591524960303136*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "\[Mu]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{"\[Beta]", "+", "\[Tau]1", "+", "\[Tau]3"}], ")"}]}]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[Mu]", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Beta]", "+", "\[Tau]1"}], ")"}]}]]}], "+", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "\[Mu]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", "\[Beta]"}], "+", "\[Tau]1"}], ")"}]}]], "-", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "\[Mu]", " ", "\[Tau]3"}]], "+", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "\[Mu]", " ", 
+       RowBox[{"(", 
+        RowBox[{"\[Beta]", "+", "\[Tau]3"}], ")"}]}]], "+", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[Beta]", " ", "\[Mu]"}]], " ", "\[Beta]", " ", 
+      "\[Mu]"}], "+", 
+     RowBox[{"6", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"3", " ", "\[Beta]", " ", "\[Mu]"}]], " ", "\[Beta]", " ", 
+      "\[Mu]"}], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[Mu]", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Beta]", "+", 
+          RowBox[{"2", " ", 
+           RowBox[{"(", 
+            RowBox[{"\[Tau]1", "+", "\[Tau]3"}], ")"}]}]}], ")"}]}]], " ", 
+      "\[Beta]", " ", "\[Mu]"}]}], ")"}]}], 
+  RowBox[{"8", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[Beta]", " ", "\[Mu]"}]]}], ")"}], "2"], " ", 
+   "\[Mu]"}]]], "Output",
+ CellChangeTimes->{{3.59152463029978*^9, 3.59152464223177*^9}, {
+   3.591524719402382*^9, 3.591524752074341*^9}, {3.591524833900138*^9, 
+   3.591524848073053*^9}, {3.591524886891747*^9, 3.5915248944754553`*^9}, {
+   3.591524944114319*^9, 3.591524967542416*^9}, 3.591959746873111*^9, 
+   3.59219969916365*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot3D", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "@", 
+      RowBox[{"g2irr", "[", 
+       RowBox[{"\[Tau]1", ",", "\[Tau]3", ",", "\[Mu]", ",", "\[Beta]"}], 
+       "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Tau]1", ",", "0", ",", "\[Beta]"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Tau]3", ",", "0", ",", "\[Beta]"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\[Tau]\>\"", ",", "\"\<\[Tau]'\>\"", ",", 
+        "\"\<\!\(\*SubsuperscriptBox[\(g\), \(0, \[Tau], \[Tau]'\), \((2  \
+irr)\)]\)\>\""}], "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", ",", "1"}], "}"}], ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Beta]", ",", "1"}], "}"}], ",", "0", ",", "10"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5915249714033413`*^9, 3.591524991490361*^9}, {
+  3.591525066530694*^9, 3.591525113249588*^9}, {3.591525220010792*^9, 
+  3.5915252788443127`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Beta]$$ = 3.58, $CellContext`\[Mu]$$ = 
+    1.1400000000000001`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Mu]$$], 1}, 0, 10}, {{
+       Hold[$CellContext`\[Beta]$$], 1}, 0, 10}}, Typeset`size$$ = {
+    360., {130., 136.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Mu]$17986$$ = 
+    0, $CellContext`\[Beta]$17991$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`\[Beta]$$ = 1, $CellContext`\[Mu]$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$17986$$, 0], 
+        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$17991$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot3D[
+        Evaluate[
+         $CellContext`g2irr[$CellContext`\[Tau]1, $CellContext`\[Tau]3, \
+$CellContext`\[Mu]$$, $CellContext`\[Beta]$$]], {$CellContext`\[Tau]1, 
+         0, $CellContext`\[Beta]$$}, {$CellContext`\[Tau]3, 
+         0, $CellContext`\[Beta]$$}, PlotRange -> Full, 
+        AxesLabel -> {
+         "\[Tau]", "\[Tau]'", 
+          "\!\(\*SubsuperscriptBox[\(g\), \(0, \[Tau], \[Tau]'\), \((2  \
+irr)\)]\)"}], 
+      "Specifications" :> {{{$CellContext`\[Mu]$$, 1}, 0, 
+         10}, {{$CellContext`\[Beta]$$, 1}, 0, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {187., 194.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.591525091036459*^9, 3.591525113824203*^9}, 
+   3.59152515351344*^9, 3.591525237428748*^9, {3.591525271065522*^9, 
+   3.591525283387105*^9}, 3.591959751908807*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"x1", "=", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "\[Tau]1", ",", "1"}], "}"}]}], ",", 
+        RowBox[{"x2", "=", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0", ",", "1"}], "}"}]}], ",", 
+        RowBox[{"U", "=", 
+         RowBox[{"2", "\[Mu]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\[LeftAngleBracket]", 
+       RowBox[{
+        SubsuperscriptBox["c", "x1", "\[Dagger]"], "\[CenterDot]", 
+        SubscriptBox["c", "x2"]}], "\[RightAngleBracket]"}]}], "]"}], "//", 
+    RowBox[{
+     RowBox[{"F", "[", 
+      RowBox[{"#", ",", "\[Tau]1", ",", "\[Beta]", ",", "\[Omega]1"}], "]"}], 
+     "&"}]}], "//", "matsubara"}], "//", "Simplify"}]], "Input",
+ CellChangeTimes->{{3.591521792071453*^9, 3.59152187982327*^9}, {
+   3.591522448571589*^9, 3.5915224633391333`*^9}, 3.591528848161118*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\[ImaginaryI]", " ", "\[Omega]1"}], 
+  RowBox[{
+   SuperscriptBox["\[Mu]", "2"], "+", 
+   SuperscriptBox["\[Omega]1", "2"]}]]], "Output",
+ CellChangeTimes->{{3.5915218137090816`*^9, 3.59152184034142*^9}, 
+   3.591521881269807*^9, {3.59152245461374*^9, 3.591522463909953*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "g", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "[", "\[Omega]_", "]"}], ":=", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", "\[Omega]"}], 
+   RowBox[{
+    SuperscriptBox["\[Mu]", "2"], "+", 
+    SuperscriptBox["\[Omega]", "2"]}]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   OverscriptBox["G", "~"], "[", 
+   RowBox[{"\[Omega]_", ",", "k_"}], "]"}], ":=", 
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"g", "[", "\[Omega]", "]"}], "-", 
+    SuperscriptBox[
+     RowBox[{"\[Epsilon]", "[", "k", "]"}], 
+     RowBox[{"-", "1"}]]}]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Epsilon]", "[", "k_List", "]"}], ":=", 
+  RowBox[{"2", " ", "t", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"k", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+      "]"}], "+", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"k", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
+      "]"}]}], ")"}]}]}]}], "Input",
+ CellChangeTimes->{
+  3.591435061765768*^9, {3.591435183004826*^9, 3.591435192838785*^9}, {
+   3.591435582435753*^9, 3.59143563954811*^9}, {3.591435717355813*^9, 
+   3.591435767750626*^9}, 3.591523423356904*^9, {3.591528259579788*^9, 
+   3.591528284762724*^9}, {3.591529435913975*^9, 3.591529534114555*^9}, {
+   3.5915295748135633`*^9, 3.59152957532578*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{
+   "\[Beta]_", ",", "t_", ",", "\[Mu]_", ",", "\[CapitalOmega]_", ",", "Kx_", 
+    ",", "Ky_", ",", "\[Omega]_"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    OverscriptBox["G", "~"], "[", 
+    RowBox[{"\[Omega]", ",", 
+     RowBox[{"{", 
+      RowBox[{"kx", ",", "ky"}], "}"}]}], "]"}], 
+   RowBox[{
+    OverscriptBox["G", "~"], "[", 
+    RowBox[{"\[Omega]", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"kx", "+", "Kx"}], ",", 
+       RowBox[{"ky", "+", "Ky"}]}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.59196314445535*^9, 3.591963144668816*^9}, {
+  3.5922084995086613`*^9, 3.592208534982852*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", "\[Omega]"}], 
+      RowBox[{
+       SuperscriptBox["\[Mu]", "2"], "+", 
+       SuperscriptBox["\[Omega]", "2"]}]], "-", 
+     FractionBox["1", 
+      RowBox[{"2", " ", "t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", "kx", "]"}], "+", 
+         RowBox[{"Cos", "[", "ky", "]"}]}], ")"}]}]]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", "\[Omega]"}], 
+      RowBox[{
+       SuperscriptBox["\[Mu]", "2"], "+", 
+       SuperscriptBox["\[Omega]", "2"]}]], "-", 
+     FractionBox["1", 
+      RowBox[{"2", " ", "t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"kx", "+", "Kx"}], "]"}], "+", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"ky", "+", "Ky"}], "]"}]}], ")"}]}]]}], ")"}]}]]], "Output",\
+
+ CellChangeTimes->{3.5919629442762117`*^9, 3.5919631171820717`*^9, 
+  3.591963156788773*^9, 3.592199702721695*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{
+   "\[Beta]_", ",", "t_", ",", "\[Mu]_", ",", "n_", ",", "Kx_", ",", "Ky_", 
+    ",", "\[Tau]_"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     OverscriptBox["G", "~"], "[", 
+     RowBox[{"\[Omega]", ",", 
+      RowBox[{"{", 
+       RowBox[{"kx", ",", "ky"}], "}"}]}], "]"}], 
+    RowBox[{
+     OverscriptBox["G", "~"], "[", 
+     RowBox[{"\[Omega]", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"kx", "+", "Kx"}], ",", 
+        RowBox[{"ky", "+", "Ky"}]}], "}"}]}], "]"}], 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "\[Omega]", " ", "\[Tau]"}]]}], "/.", 
+   RowBox[{"\[Omega]", "\[Rule]", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{"2", "n"}], "+", "1"}], "\[Beta]"], "\[Pi]"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"\[ImaginaryI]", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"2", " ", "n"}]}], ")"}], " ", "\[Pi]", " ", "\[Tau]"}], 
+     "\[Beta]"]}]], 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "n"}]}], ")"}], " ", "\[Pi]"}], 
+      RowBox[{"\[Beta]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              RowBox[{"2", " ", "n"}]}], ")"}], "2"], " ", 
+           SuperscriptBox["\[Pi]", "2"]}], 
+          SuperscriptBox["\[Beta]", "2"]], "+", 
+         SuperscriptBox["\[Mu]", "2"]}], ")"}]}]], "-", 
+     FractionBox["1", 
+      RowBox[{"2", " ", "t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", "kx", "]"}], "+", 
+         RowBox[{"Cos", "[", "ky", "]"}]}], ")"}]}]]}], ")"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "n"}]}], ")"}], " ", "\[Pi]"}], 
+      RowBox[{"\[Beta]", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              RowBox[{"2", " ", "n"}]}], ")"}], "2"], " ", 
+           SuperscriptBox["\[Pi]", "2"]}], 
+          SuperscriptBox["\[Beta]", "2"]], "+", 
+         SuperscriptBox["\[Mu]", "2"]}], ")"}]}]], "-", 
+     FractionBox["1", 
+      RowBox[{"2", " ", "t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"kx", "+", "Kx"}], "]"}], "+", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"ky", "+", "Ky"}], "]"}]}], ")"}]}]]}], ")"}]}]]], "Output",\
+
+ CellChangeTimes->{3.5919631156095057`*^9, 3.592199704427204*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"X", "[", 
+   RowBox[{
+    RowBox[{"\[Beta]_", "?", "NumberQ"}], ",", 
+    RowBox[{"t_", "?", "NumberQ"}], ",", 
+    RowBox[{"\[Mu]_", "?", "NumberQ"}], ",", 
+    RowBox[{"n_", "?", "IntegerQ"}], ",", 
+    RowBox[{"Kx_", "?", "NumberQ"}], ",", 
+    RowBox[{"Ky_", "?", "NumberQ"}], ",", 
+    RowBox[{"\[Tau]_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"x", "[", 
+     RowBox[{
+     "\[Beta]", ",", "t", ",", "\[Mu]", ",", "n", ",", "Kx", ",", "Ky", ",", 
+      "\[Tau]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"kx", ",", 
+      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"ky", ",", 
+      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"X", "[", 
+   RowBox[{
+    RowBox[{"\[Beta]_", "?", "NumberQ"}], ",", 
+    RowBox[{"t_", "?", "NumberQ"}], ",", 
+    RowBox[{"\[Mu]_", "?", "NumberQ"}], ",", 
+    RowBox[{"Kx_", "?", "NumberQ"}], ",", 
+    RowBox[{"Ky_", "?", "NumberQ"}], ",", 
+    RowBox[{"\[Omega]_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"x", "[", 
+     RowBox[{
+     "\[Beta]", ",", "t", ",", "\[Mu]", ",", "Kx", ",", "Ky", ",", 
+      "\[Omega]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"kx", ",", 
+      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"ky", ",", 
+      RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.59196048341599*^9, 3.591960511553298*^9}, {
+  3.591961014041974*^9, 3.5919610469970713`*^9}, {3.5919613240776167`*^9, 
+  3.5919615794484587`*^9}, {3.591961866674301*^9, 3.591961876891643*^9}, {
+  3.591962052275434*^9, 3.591962070240419*^9}, {3.591962729295555*^9, 
+  3.591962765556624*^9}, {3.591962838457202*^9, 3.591962937859789*^9}, {
+  3.591963195324192*^9, 3.591963209940864*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"data", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Re", "[", 
+        RowBox[{"X", "[", 
+         RowBox[{"\[Beta]", ",", "t", ",", "\[Mu]", ",", "Kx", ",", "Ky", ",", 
+          RowBox[{"\[Omega]", "//", "N"}]}], "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Omega]", ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"2", 
+             RowBox[{"(", 
+              RowBox[{"-", "50"}], ")"}]}], "+", "1"}], "\[Beta]"], "\[Pi]"}],
+          ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"2", 
+             RowBox[{"(", "50", ")"}]}], "+", "1"}], "\[Beta]"], "\[Pi]"}], 
+         ",", 
+         FractionBox[
+          RowBox[{"2", "\[Pi]"}], "\[Beta]"]}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ListLinePlot", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"data", ",", 
+        RowBox[{"Re", "@", 
+         RowBox[{"InverseFourier", "[", 
+          RowBox[{"data", ",", 
+           RowBox[{"FourierParameters", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}]}]}], "}"}], 
+      ",", 
+      RowBox[{"DataRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"2", 
+             RowBox[{"(", 
+              RowBox[{"-", "50"}], ")"}]}], "+", "1"}], "\[Beta]"], "\[Pi]"}],
+          ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"2", 
+             RowBox[{"(", "50", ")"}]}], "+", "1"}], "\[Beta]"], "\[Pi]"}]}], 
+        "}"}]}], ",", 
+      RowBox[{"Mesh", "\[Rule]", "Full"}]}], "]"}]}], "\[IndentingNewLine]", 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Beta]", ",", "1"}], "}"}], ",", "1", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "1"}], "}"}], ",", "1", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", ",", "1"}], "}"}], ",", "1", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Kx", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Ky", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.591964067589458*^9, 3.591964144673284*^9}, 
+   3.591964182816691*^9, {3.591964217363758*^9, 3.591964217789363*^9}, {
+   3.5919647290645943`*^9, 3.591964793591411*^9}, {3.5919648665665627`*^9, 
+   3.591965031672526*^9}, {3.591965405177567*^9, 3.591965425952827*^9}, {
+   3.5919654679845343`*^9, 3.591965533524171*^9}, {3.5919655753331423`*^9, 
+   3.591965625359839*^9}, {3.5919658061170187`*^9, 3.591965808670093*^9}, {
+   3.591965949657206*^9, 3.5919659940117493`*^9}, {3.591966028800664*^9, 
+   3.5919660299165583`*^9}, {3.591966072634709*^9, 3.5919660755514927`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Kx$$ = 
+    3.141592653589793, $CellContext`Ky$$ = 
+    3.141592653589793, $CellContext`t$$ = 1, $CellContext`\[Beta]$$ = 
+    1., $CellContext`\[Mu]$$ = 4.37, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Beta]$$], 1}, 1, 10}, {{
+       Hold[$CellContext`t$$], 1}, 1, 10}, {{
+       Hold[$CellContext`\[Mu]$$], 1}, 1, 10}, {{
+       Hold[$CellContext`Kx$$], 0}, -Pi, Pi}, {{
+       Hold[$CellContext`Ky$$], 0}, -Pi, Pi}}, Typeset`size$$ = {
+    360., {111., 117.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Beta]$22156$$ = 
+    0, $CellContext`t$22157$$ = 0, $CellContext`\[Mu]$22158$$ = 
+    0, $CellContext`Kx$22159$$ = 0, $CellContext`Ky$22160$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Kx$$ = 0, $CellContext`Ky$$ = 
+        0, $CellContext`t$$ = 1, $CellContext`\[Beta]$$ = 
+        1, $CellContext`\[Mu]$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$22156$$, 0], 
+        Hold[$CellContext`t$$, $CellContext`t$22157$$, 0], 
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$22158$$, 0], 
+        Hold[$CellContext`Kx$$, $CellContext`Kx$22159$$, 0], 
+        Hold[$CellContext`Ky$$, $CellContext`Ky$22160$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`data = Table[
+          Re[
+           $CellContext`X[$CellContext`\[Beta]$$, $CellContext`t$$, \
+$CellContext`\[Mu]$$, $CellContext`Kx$$, $CellContext`Ky$$, 
+            N[$CellContext`\[Omega]]]], {$CellContext`\[Omega], ((2 (-50) + 
+             1)/$CellContext`\[Beta]$$) 
+           Pi, ((2 50 + 1)/$CellContext`\[Beta]$$) Pi, 2 
+           Pi/$CellContext`\[Beta]$$}]; ListLinePlot[{$CellContext`data, 
+          Re[
+           InverseFourier[$CellContext`data, FourierParameters -> {-1, 1}]]}, 
+         DataRange -> {((2 (-50) + 1)/$CellContext`\[Beta]$$) 
+           Pi, ((2 50 + 1)/$CellContext`\[Beta]$$) Pi}, Mesh -> Full]), 
+      "Specifications" :> {{{$CellContext`\[Beta]$$, 1}, 1, 
+         10}, {{$CellContext`t$$, 1}, 1, 10}, {{$CellContext`\[Mu]$$, 1}, 1, 
+         10}, {{$CellContext`Kx$$, 0}, -Pi, Pi}, {{$CellContext`Ky$$, 0}, -Pi,
+          Pi}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {227., 234.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.5919659754385967`*^9, 3.59196599497523*^9}, 
+   3.5919660311300077`*^9, 3.591966076750888*^9, 3.592199713591136*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.591964383713011*^9, 3.591964427598028*^9}, {
+  3.5919647576191607`*^9, 3.591964764398897*^9}}]
+},
+WindowSize->{1680, 1023},
+WindowMargins->{{1366, Automatic}, {Automatic, 0}},
+InputAliases->{
+ "on" -> "\[CenterDot]", "tp" -> "\[CircleTimes]", "op" -> 
+  OverscriptBox["\[Placeholder]", "^"], "her" -> SuperscriptBox[
+    RowBox[{"(", "\[Placeholder]", ")"}], "\[Dagger]"], "con" -> 
+  SuperscriptBox[
+    RowBox[{"(", "\[Placeholder]", ")"}], "*"], "comm" -> TagBox[
+    SubscriptBox[
+     RowBox[{"\[LeftDoubleBracket]", 
+       TagBox[
+        RowBox[{"\[Placeholder]", ",", "\[Placeholder]"}], 
+        Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True], 
+       "\[RightDoubleBracket]"}], "-"], Quantum`Notation`zz050Commutator, 
+    Editable -> False, Selectable -> False], "anti" -> TagBox[
+    SubscriptBox[
+     RowBox[{"\[LeftDoubleBracket]", 
+       TagBox[
+        RowBox[{"\[Placeholder]", ",", "\[Placeholder]"}], 
+        Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True], 
+       "\[RightDoubleBracket]"}], "+"], Quantum`Notation`zz050AntiCommutator, 
+    Editable -> False, Selectable -> False], "ket" -> TagBox[
+    RowBox[{"\[VerticalSeparator]", 
+      TagBox[
+      "\[Placeholder]", Quantum`Notation`zz080KetArgs, Editable -> True, 
+       Selectable -> True, BaseStyle -> {ShowSyntaxStyles -> True}], 
+      "\[RightAngleBracket]"}], Quantum`Notation`zz080Ket, Editable -> False, 
+    Selectable -> False, BaseStyle -> {ShowSyntaxStyles -> False}], "ev" -> 
+  SubscriptBox["\[Placeholder]", 
+    OverscriptBox["\[Placeholder]", "^"]], "eval" -> 
+  SubscriptBox["\[Placeholder]", 
+    OverscriptBox["\[Placeholder]", "^"]], "eket" -> TagBox[
+    RowBox[{"\[VerticalSeparator]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+    Quantum`Notation`zz080Ket, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "eeket" -> TagBox[
+    RowBox[{"\[VerticalSeparator]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+    Quantum`Notation`zz080Ket, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "eeeket" -> TagBox[
+    RowBox[{"\[VerticalSeparator]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+    Quantum`Notation`zz080Ket, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "braket" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+      "\[Placeholder]", Quantum`Notation`zz080BraArgs, Editable -> True, 
+       Selectable -> True, BaseStyle -> {ShowSyntaxStyles -> True}], 
+      "\[VerticalSeparator]", 
+      TagBox[
+      "\[Placeholder]", Quantum`Notation`zz080KetArgs, Editable -> True, 
+       Selectable -> True, BaseStyle -> {ShowSyntaxStyles -> True}], 
+      "\[RightAngleBracket]"}], Quantum`Notation`zz080BraKet, Editable -> 
+    False, Selectable -> False, BaseStyle -> {ShowSyntaxStyles -> False}], 
+  "ebraket" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+    Quantum`Notation`zz080BraKet, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "eebraket" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+    Quantum`Notation`zz080BraKet, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "eeebraket" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+    Quantum`Notation`zz080BraKet, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "bra" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+      "\[Placeholder]", Quantum`Notation`zz080BraArgs, Editable -> True, 
+       Selectable -> True, BaseStyle -> {ShowSyntaxStyles -> True}], 
+      "\[VerticalSeparator]"}], Quantum`Notation`zz080Bra, Editable -> False, 
+    Selectable -> False, BaseStyle -> {ShowSyntaxStyles -> False}], "ebra" -> 
+  TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]"}], 
+    Quantum`Notation`zz080Bra, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "eebra" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]"}], 
+    Quantum`Notation`zz080Bra, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "eeebra" -> TagBox[
+    RowBox[{"\[LeftAngleBracket]", 
+      TagBox[
+       RowBox[{
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], ",", 
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]]}], 
+       Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+       BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]"}], 
+    Quantum`Notation`zz080Bra, Editable -> False, Selectable -> False, 
+    BaseStyle -> {ShowSyntaxStyles -> False}], "norm" -> 
+  RowBox[{"\[LeftDoubleBracketingBar]", "\[Placeholder]", 
+     "\[RightDoubleBracketingBar]"}], "trace" -> RowBox[{
+     SubscriptBox["Tr", 
+      OverscriptBox["\[Placeholder]", "^"]], "[", "\[Placeholder]", "]"}], 
+  "ketbra" -> RowBox[{
+     TagBox[
+      RowBox[{"\[VerticalSeparator]", 
+        TagBox[
+        "\[Placeholder]", Quantum`Notation`zz080KetArgs, Editable -> True, 
+         Selectable -> True, BaseStyle -> {ShowSyntaxStyles -> True}], 
+        "\[RightAngleBracket]"}], Quantum`Notation`zz080Ket, Editable -> 
+      False, Selectable -> False, BaseStyle -> {ShowSyntaxStyles -> False}], 
+     "\[CenterDot]", 
+     TagBox[
+      RowBox[{"\[LeftAngleBracket]", 
+        TagBox[
+        "\[Placeholder]", Quantum`Notation`zz080BraArgs, Editable -> True, 
+         Selectable -> True, BaseStyle -> {ShowSyntaxStyles -> True}], 
+        "\[VerticalSeparator]"}], Quantum`Notation`zz080Bra, Editable -> 
+      False, Selectable -> False, BaseStyle -> {ShowSyntaxStyles -> False}]}],
+   "eketbra" -> RowBox[{
+     TagBox[
+      RowBox[{"\[VerticalSeparator]", 
+        TagBox[
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], 
+         Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+         BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+      Quantum`Notation`zz080Ket, Editable -> False, Selectable -> False, 
+      BaseStyle -> {ShowSyntaxStyles -> False}], "\[CenterDot]", 
+     TagBox[
+      RowBox[{"\[LeftAngleBracket]", 
+        TagBox[
+         SubscriptBox["\[Placeholder]", 
+          OverscriptBox["\[Placeholder]", "^"]], 
+         Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+         BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]"}], 
+      Quantum`Notation`zz080Bra, Editable -> False, Selectable -> False, 
+      BaseStyle -> {ShowSyntaxStyles -> False}]}], "eeketbra" -> RowBox[{
+     TagBox[
+      RowBox[{"\[VerticalSeparator]", 
+        TagBox[
+         RowBox[{
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]], ",", 
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]]}], 
+         Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+         BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+      Quantum`Notation`zz080Ket, Editable -> False, Selectable -> False, 
+      BaseStyle -> {ShowSyntaxStyles -> False}], "\[CenterDot]", 
+     TagBox[
+      RowBox[{"\[LeftAngleBracket]", 
+        TagBox[
+         RowBox[{
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]], ",", 
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]]}], 
+         Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+         BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]"}], 
+      Quantum`Notation`zz080Bra, Editable -> False, Selectable -> False, 
+      BaseStyle -> {ShowSyntaxStyles -> False}]}], "eeeketbra" -> RowBox[{
+     TagBox[
+      RowBox[{"\[VerticalSeparator]", 
+        TagBox[
+         RowBox[{
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]], ",", 
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]], ",", 
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]]}], 
+         Quantum`Notation`zz080KetArgs, Editable -> True, Selectable -> True, 
+         BaseStyle -> {ShowSyntaxStyles -> True}], "\[RightAngleBracket]"}], 
+      Quantum`Notation`zz080Ket, Editable -> False, Selectable -> False, 
+      BaseStyle -> {ShowSyntaxStyles -> False}], "\[CenterDot]", 
+     TagBox[
+      RowBox[{"\[LeftAngleBracket]", 
+        TagBox[
+         RowBox[{
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]], ",", 
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]], ",", 
+           SubscriptBox["\[Placeholder]", 
+            OverscriptBox["\[Placeholder]", "^"]]}], 
+         Quantum`Notation`zz080BraArgs, Editable -> True, Selectable -> True, 
+         BaseStyle -> {ShowSyntaxStyles -> True}], "\[VerticalSeparator]"}], 
+      Quantum`Notation`zz080Bra, Editable -> False, Selectable -> False, 
+      BaseStyle -> {ShowSyntaxStyles -> False}]}], "su" -> 
+  SubscriptBox["\[Placeholder]", "\[Placeholder]"], "po" -> SuperscriptBox[
+    RowBox[{"(", "\[Placeholder]", ")"}], "\[Placeholder]"], "pow" -> 
+  SuperscriptBox[
+    RowBox[{"(", "\[Placeholder]", ")"}], "\[Placeholder]"], "si" -> RowBox[{
+     UnderoverscriptBox["\[Sum]", "\[Placeholder]", "\[Placeholder]"], 
+     "\[Placeholder]"}], "qs" -> RowBox[{
+     UnderoverscriptBox["\[Sum]", "\[Placeholder]", "\[Placeholder]"], 
+     "\[Placeholder]"}], "qp" -> TagBox[
+    RowBox[{
+      UnderoverscriptBox["\[CircleTimes]", 
+       TagBox[
+       "\[Placeholder]", Quantum`Notation`zz020TPNotationini, Editable -> 
+        True, Selectable -> True], 
+       TagBox[
+       "\[Placeholder]", Quantum`Notation`zz020TPNotationend, Editable -> 
+        True, Selectable -> True]], 
+      TagBox[
+      "\[Placeholder]", Quantum`Notation`zz020TPNotationdat, Editable -> True,
+        Selectable -> True]}], Quantum`Notation`zz020TPNotation, Editable -> 
+    False, Selectable -> False]},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 2684, 63, 81, "Input"],
+Cell[3266, 87, 6862, 204, 113, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10165, 296, 543, 13, 32, "Input"],
+Cell[10711, 311, 2058, 54, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12806, 370, 1206, 31, 107, "Input"],
+Cell[14015, 403, 2368, 47, 398, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16420, 455, 970, 25, 59, "Input"],
+Cell[17393, 482, 314, 7, 53, "Output"]
+}, Open  ]],
+Cell[17722, 492, 1372, 36, 162, "Input"],
+Cell[CellGroupData[{
+Cell[19119, 532, 674, 20, 35, "Input"],
+Cell[19796, 554, 1070, 33, 65, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20903, 592, 847, 27, 58, "Input"],
+Cell[21753, 621, 2048, 64, 111, "Output"]
+}, Open  ]],
+Cell[23816, 688, 1936, 50, 55, "Input"],
+Cell[CellGroupData[{
+Cell[25777, 742, 3183, 89, 198, "Input"],
+Cell[28963, 833, 3252, 60, 478, "Output"]
+}, Open  ]],
+Cell[32230, 896, 143, 2, 32, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
