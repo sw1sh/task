@@ -41,9 +41,9 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left< c^\dag_\uparrow(\tau)c_\uparrow(0
 
 Таким образом, нам понадобятся величины 
 \begin{equation}
-X^{(0)}_{\Omega K \tau} = \beta^{-1} {\color{red} \int_? \mathrm{d}^2k} \sum_\omega \tilde{G}_{\omega k} \tilde{G}_{\substack{\Omega+\omega\\K+k}} e^{-i \omega \tau},
+X^{(0)}_{\Omega K \tau} = \beta^{-1} \iint_{-\pi}^{\pi} \mathrm{d}^2k \sum_\omega \tilde{G}_{\omega k} \tilde{G}_{\substack{\Omega+\omega\\K+k}} e^{-i \omega \tau},
 \end{equation}
-где суммирование идёт по матсубаровским частотам $\omega_n = \frac{(2n+1)\pi}{\beta}, n\in\mathbb{Z}$.
+где суммирование идёт по мацубаровским частотам $\omega_n = \frac{(2n+1)\pi}{\beta}, n\in\mathbb{Z}$, а интегрирование по 1-ой зоне Бриллюэна.
 
 \begin{equation}
 g^{(2irr)}_{\Omega \tau \tau'} = \int_0^\beta g^{(2irr)}_{ t+\tau\downarrow, t\uparrow,\tau'\uparrow,0\downarrow}  e^{i\Omega t} dt.
@@ -61,5 +61,35 @@ g^{(2irr)}_{\Omega \tau \tau'} = \int_0^\beta g^{(2irr)}_{ t+\tau\downarrow, t\u
 \includegraphics[scale=0.6]{g2irr.eps}
 \caption[$g^{(2irr)}_{0 \tau \tau'}$]{3D график $g^{(2irr)}_{0 \tau \tau'}$}
 \end{figure}
-	
+
+Легко заметить что $\tilde{G}_{\omega k}\xrightarrow[\omega\to\pm\infty]{}-\epsilon_k$. Поэтому определим $\tilde{X}^{(0)}$
+
+\begin{equation}
+\begin{split}
+\tilde{X}^{(0)}_{\Omega K \tau} &= X^{(0)}_{\Omega K \tau} - \beta^{-1} \iint_{-\pi}^{\pi} \mathrm{d}^2k \sum_\omega \epsilon_k \epsilon_{k+K} e^{-i \omega \tau} \\
+                                &= X^{(0)}_{\Omega K \tau} - 4\pi^2 t \frac{\epsilon_K}{\beta} \delta(\tau) 
+\end{split}
+\end{equation}
+
+Таким образом мы получим сходящуюся сумму по $\omega$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{Xplotbeta.eps}
+\caption[]{}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{XplotK.eps}
+\caption[]{}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{XplotOmega.eps}
+\caption[]{}
+\end{figure}
+
+
 \end{document}
