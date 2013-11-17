@@ -6,6 +6,8 @@
 \usepackage[makeroom]{cancel}
 \begin{document}
 
+\section{Блок диаграммы. Вершинная функция.}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{ladder.eps}
@@ -90,6 +92,41 @@ g^{(2irr)}_{\Omega \tau \tau'} = \int_0^\beta g^{(2irr)}_{ t+\tau\downarrow, t\u
 \includegraphics[scale=0.6]{XplotOmega.eps}
 \caption[]{}
 \end{figure}
+
+\pagebreak
+
+\section{Расчет диаграммы}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{diagram.eps}
+\caption[]{}
+\end{figure}
+
+\begin{equation}
+X_{\substack{\Omega K\\ \omega\omega'}} = \chi_{\substack{\Omega\\ \omega\omega'}} 
+  + \frac{1}{\beta}\sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}
+    \overbrace{\left(\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{\chi^{(0)}_{\substack{\Omega K\\\omega''}}}
+    X_{\substack{\Omega K\\\omega''\omega'}}
+\end{equation}
+
+После обратного Фурье преобразования, получаем интегральное уравнение
+
+\begin{equation}
+\begin{split}
+X_{\substack{\Omega K\\ \tau\tau'}} &= \chi_{\substack{\Omega\\ \tau\tau'}} 
+  + \chi_{\substack{\Omega\\ \tau\tau'}}\int_0^\beta\mathrm{d}\tau''\chi^{(0)}_{\substack{\Omega K\\ -\tau''}}X_{\substack{\Omega K\\ \tau''\tau'}}
+\end{split}
+\end{equation}
+
+Образуем сетку $N\timesN$ по $\tau$-переменным: $\tau_i=i\Delta\tau, i\in \overline{0,N}$, где $\Delta\tau=\frac{\beta}{N}$, тогда интегральное уравнение
+можно будет заменить на систему $(N+1)^2$ линейных уравнений c $(N+1)^2$ неизвестными
+
+\begin{equation}
+ X_{ij} + \sum_{k=0}^N a_{ijk}X_{kj} = b_{ij}
+\end{equation}
+
+где $X_{ij} = X_{\substack{\Omega K\\ \tau_i\tau_j}}, a_{ijk} = -\chi_{\substack{\Omega\\ \tau_i\tau_j}}\chi^{(0)}_{\substack{\Omega K\\ -\tau_k}}\Delta\tau,b_{ij}=\chi_{\substack{\Omega\\ \tau_i\tau_j}}$
 
 
 \end{document}
