@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    721257,      12796]
-NotebookOptionsPosition[    704651,      12423]
-NotebookOutlinePosition[    718918,      12720]
-CellTagsIndexPosition[    718875,      12717]
+NotebookDataLength[    722348,      12823]
+NotebookOptionsPosition[    705625,      12446]
+NotebookOutlinePosition[    719891,      12743]
+CellTagsIndexPosition[    719848,      12740]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5497,8 +5497,8 @@ $CellContext`\[CapitalOmega]$28298$$, 0],
 $CellContext`\[Mu]$$, $CellContext`\[CapitalOmega]$$, $CellContext`Kx$$, \
 $CellContext`Ky$$, 
              N[((2 $CellContext`n + 1)/$CellContext`\[Beta]$$) Pi]] 
-           E^((-I) ((2 $CellContext`n + 1)/$CellContext`\[Beta]$$) 
-             Pi $CellContext`\[Tau])], {$CellContext`n, -15, 15}]; Plot[
+           E^((((-I) ((2 $CellContext`n + 1)/$CellContext`\[Beta]$$)) 
+              Pi) $CellContext`\[Tau])], {$CellContext`n, -15, 15}]; Plot[
          Evaluate[
           Re[$CellContext`X\[Tau]]], {$CellContext`\[Tau], -10, 10}, 
          PlotRange -> Full, 
@@ -12051,7 +12051,19 @@ MZ9TDeNTMxczp3/aDExNYSgzWXijafZi5j/DEYei
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Manipulate", "[", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+ RowBox[{"Dynamic", "[", "status", "]"}]], "Input",
+ CellChangeTimes->{{3.593771919204959*^9, 3.5937719245349703`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`status, StandardForm],
+  ImageSizeCache->{45., {0., 9.}}]], "Output",
+ CellChangeTimes->{3.5937719310231*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
@@ -12174,44 +12186,46 @@ Cell[BoxData[
           "\[RightDoubleBracket]"}], "//", "Quiet"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"ListPlot3D", "[", 
+       RowBox[{"{", 
         RowBox[{
-         RowBox[{"Flatten", "[", 
-          RowBox[{
-           RowBox[{"Table", "[", 
-            RowBox[{
+         RowBox[{
+          RowBox[{"ListPlot3D", "[", 
+           RowBox[{
+            RowBox[{"Flatten", "[", 
+             RowBox[{
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  SubscriptBox["\[Tau]", "i"], ",", 
+                  SubscriptBox["\[Tau]", "j"], ",", 
+                  RowBox[{
+                   RowBox[{"X", "[", 
+                    RowBox[{"i", ",", "j"}], "]"}], "//", "Re"}]}], "}"}], 
+                ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "0", ",", "\[CapitalNu]"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"j", ",", "0", ",", "\[CapitalNu]"}], "}"}]}], "]"}],
+               ",", "1"}], "]"}], ",", 
+            RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+            RowBox[{"AxesLabel", "\[Rule]", 
              RowBox[{"{", 
               RowBox[{
-               SubscriptBox["\[Tau]", "i"], ",", 
-               SubscriptBox["\[Tau]", "j"], ",", 
+              "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(1\)]\)\>\"", ",", 
+               "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(2\)]\)\>\"", ",", 
+               "\"\<Re(\!\(\*SubscriptBox[\(X\), \(\[CapitalOmega]\\\ K\)]\))\
+\>\""}], "}"}]}], ",", 
+            RowBox[{"PlotLabel", "\[Rule]", 
+             RowBox[{"Row", "[", 
+              RowBox[{"{", 
                RowBox[{
-                RowBox[{"X", "[", 
-                 RowBox[{"i", ",", "j"}], "]"}], "//", "Im"}]}], "}"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"i", ",", "0", ",", "\[CapitalNu]"}], "}"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"j", ",", "0", ",", "\[CapitalNu]"}], "}"}]}], "]"}], 
-           ",", "1"}], "]"}], ",", 
-         RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
-         RowBox[{"AxesLabel", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-           "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(1\)]\)\>\"", ",", 
-            "\"\<\!\(\*SubscriptBox[\(\[Tau]\), \(2\)]\)\>\"", ",", 
-            "\"\<\!\(\*SubscriptBox[\"X\", GridBox[{
-{
-RowBox[{\"\[CapitalOmega]\", \" \", \"K\"}]},
-{
-RowBox[{SubscriptBox[\"\[Tau]\", \"1\"], SubscriptBox[\"\[Tau]\", \"2\"]}]}
-}]]\)\>\""}], "}"}]}], ",", 
-         RowBox[{"PlotLabel", "\[Rule]", 
-          RowBox[{"Row", "[", 
-           RowBox[{"{", 
-            RowBox[{
-            "\"\<\[Beta]=\>\"", ",", "\[Beta]", ",", 
-             "\"\<;\[CapitalOmega]=\>\"", ",", "\[CapitalOmega]"}], "}"}], 
-           "]"}]}]}], "]"}], "//", "Quiet"}]}]}], "\[IndentingNewLine]", 
-    "]"}], ",", 
+               "\"\<\[Beta]=\>\"", ",", "\[Beta]", ",", 
+                "\"\<;\[CapitalOmega]=\>\"", ",", "\[CapitalOmega]"}], "}"}], 
+              "]"}]}]}], "]"}], "//", "Quiet"}], ",", 
+         RowBox[{"status", "=", "\"\<Done.\>\""}]}], "}"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}], ",", 
+   
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", 
@@ -12288,15 +12302,16 @@ RowBox[{SubscriptBox[\"\[Tau]\", \"1\"], SubscriptBox[\"\[Tau]\", \"2\"]}]}
    3.59370013818369*^9}, {3.593700182201536*^9, 3.593700242358078*^9}, {
    3.593700297062174*^9, 3.593700354069489*^9}, {3.593705628004155*^9, 
    3.59370564462344*^9}, 3.593705755858038*^9, {3.593705791239916*^9, 
-   3.593705792588334*^9}, {3.593707571685967*^9, 3.5937076720857983`*^9}}],
+   3.593705792588334*^9}, {3.593707571685967*^9, 3.593707728958403*^9}, {
+   3.593771802615161*^9, 3.593771812613798*^9}, 3.593771933186905*^9}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`Kx$$ = 0, $CellContext`Ky$$ = 
     0, $CellContext`t$$ = 1, $CellContext`\[Beta]$$ = 
-    1, $CellContext`\[Mu]$$ = 1, $CellContext`\[CapitalNu]$$ = 
-    10, $CellContext`\[CapitalOmega]$$ = 0.74, Typeset`show$$ = True, 
+    1., $CellContext`\[Mu]$$ = 1, $CellContext`\[CapitalNu]$$ = 
+    19, $CellContext`\[CapitalOmega]$$ = 0.5, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{{
@@ -12307,25 +12322,25 @@ Cell[BoxData[
        Hold[$CellContext`Kx$$], 0}, -Pi, Pi}, {{
        Hold[$CellContext`Ky$$], 0}, -Pi, Pi}, {{
        Hold[$CellContext`\[CapitalNu]$$], 10}, 2, 20, 1}}, Typeset`size$$ = {
-    360., {130., 135.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`\[Beta]$59159$$ = 
-    0, $CellContext`t$59160$$ = 0, $CellContext`\[Mu]$59161$$ = 
-    0, $CellContext`\[CapitalOmega]$59162$$ = 0, $CellContext`Kx$59163$$ = 
-    0, $CellContext`Ky$59164$$ = 0, $CellContext`\[CapitalNu]$59165$$ = 0}, 
+    360., {132., 137.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Beta]$86740$$ = 
+    0, $CellContext`t$86741$$ = 0, $CellContext`\[Mu]$86742$$ = 
+    0, $CellContext`\[CapitalOmega]$86743$$ = 0, $CellContext`Kx$86744$$ = 
+    0, $CellContext`Ky$86745$$ = 0, $CellContext`\[CapitalNu]$86746$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`Kx$$ = 0, $CellContext`Ky$$ = 
         0, $CellContext`t$$ = 1, $CellContext`\[Beta]$$ = 
         1, $CellContext`\[Mu]$$ = 1, $CellContext`\[CapitalNu]$$ = 
         10, $CellContext`\[CapitalOmega]$$ = 0}, "ControllerVariables" :> {
-        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$59159$$, 0], 
-        Hold[$CellContext`t$$, $CellContext`t$59160$$, 0], 
-        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$59161$$, 0], 
+        Hold[$CellContext`\[Beta]$$, $CellContext`\[Beta]$86740$$, 0], 
+        Hold[$CellContext`t$$, $CellContext`t$86741$$, 0], 
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$86742$$, 0], 
         Hold[$CellContext`\[CapitalOmega]$$, \
-$CellContext`\[CapitalOmega]$59162$$, 0], 
-        Hold[$CellContext`Kx$$, $CellContext`Kx$59163$$, 0], 
-        Hold[$CellContext`Ky$$, $CellContext`Ky$59164$$, 0], 
-        Hold[$CellContext`\[CapitalNu]$$, $CellContext`\[CapitalNu]$59165$$, 
+$CellContext`\[CapitalOmega]$86743$$, 0], 
+        Hold[$CellContext`Kx$$, $CellContext`Kx$86744$$, 0], 
+        Hold[$CellContext`Ky$$, $CellContext`Ky$86745$$, 0], 
+        Hold[$CellContext`\[CapitalNu]$$, $CellContext`\[CapitalNu]$86746$$, 
          0]}, "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -12356,14 +12371,14 @@ $CellContext`\[CapitalDelta]\[Tau]$ = $CellContext`\[Beta]$$/$CellContext`\
            Pattern[$CellContext`k$, 
             Blank[]]] := (
           Subscript[$CellContext`a$, $CellContext`i$, $CellContext`j$, \
-$CellContext`k$] = (-
-            Subscript[$CellContext`b$, $CellContext`i$, $CellContext`j$]) 
-           ReplaceAll[
-             $CellContext`X0[$CellContext`\[Beta]$$, $CellContext`t$$, \
+$CellContext`k$] = ((-
+             Subscript[$CellContext`b$, $CellContext`i$, $CellContext`j$]) 
+            ReplaceAll[
+              $CellContext`X0[$CellContext`\[Beta]$$, $CellContext`t$$, \
 $CellContext`\[Mu]$$, $CellContext`\[CapitalOmega]$$, $CellContext`Kx$$, \
 $CellContext`Ky$$], $CellContext`\[Tau] -> -
-              Subscript[$CellContext`\[Tau], $CellContext`k$]] $CellContext`\
-\[CapitalDelta]\[Tau]$); $CellContext`B$ = Table[
+               Subscript[$CellContext`\[Tau], $CellContext`k$]]) \
+$CellContext`\[CapitalDelta]\[Tau]$); $CellContext`B$ = Table[
            Subscript[$CellContext`b$, 
             Quotient[$CellContext`m, $CellContext`\[CapitalNu]$$ + 1], 
             
@@ -12393,17 +12408,24 @@ $CellContext`Ky$$], $CellContext`\[Tau] -> -
             Table[{
               Subscript[$CellContext`\[Tau], $CellContext`i], 
               Subscript[$CellContext`\[Tau], $CellContext`j], 
-              Im[
+              Re[
                $CellContext`X$[$CellContext`i, $CellContext`j]]}, \
 {$CellContext`i, 0, $CellContext`\[CapitalNu]$$}, {$CellContext`j, 
-              0, $CellContext`\[CapitalNu]$$}], 1], PlotRange -> All]]], 
+              0, $CellContext`\[CapitalNu]$$}], 1], PlotRange -> All, 
+           AxesLabel -> {
+            "\!\(\*SubscriptBox[\(\[Tau]\), \(1\)]\)", 
+             "\!\(\*SubscriptBox[\(\[Tau]\), \(2\)]\)", 
+             "Re(\!\(\*SubscriptBox[\(X\), \(\[CapitalOmega]\\ K\)]\))"}, 
+           PlotLabel -> 
+           Row[{"\[Beta]=", $CellContext`\[Beta]$$, 
+              ";\[CapitalOmega]=", $CellContext`\[CapitalOmega]$$}]]]], 
       "Specifications" :> {{{$CellContext`\[Beta]$$, 1}, 1, 
          10}, {{$CellContext`t$$, 1}, 1, 10}, {{$CellContext`\[Mu]$$, 1}, 1, 
          10}, {{$CellContext`\[CapitalOmega]$$, 0}, 0, 
          10}, {{$CellContext`Kx$$, 0}, -Pi, Pi}, {{$CellContext`Ky$$, 0}, -Pi,
           Pi}, {{$CellContext`\[CapitalNu]$$, 10}, 2, 20, 1}}, 
       "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{407., {271., 278.}},
+     ImageSizeCache->{407., {251., 258.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -12418,11 +12440,12 @@ $CellContext`Ky$$], $CellContext`\[Tau] -> -
    3.593700212837625*^9}, 3.593700243920211*^9, {3.593700299831602*^9, 
    3.593700303770031*^9}, {3.59370033939023*^9, 3.5937003547149878`*^9}, 
    3.593701160981133*^9, 3.5937055374815483`*^9, 3.593705646626213*^9, 
-   3.5937057584531717`*^9, 3.593705796044622*^9}]
+   3.5937057584531717`*^9, 3.593705796044622*^9, {3.5937076820167027`*^9, 
+   3.5937077329874887`*^9}}]
 }, Open  ]]
 },
-WindowSize->{1364, 715},
-WindowMargins->{{-10, Automatic}, {Automatic, -10}},
+WindowSize->{1363, 715},
+WindowMargins->{{-9, Automatic}, {Automatic, -10}},
 InputAliases->{
  "on" -> "\[CenterDot]", "tp" -> "\[CircleTimes]", "op" -> 
   OverscriptBox["\[Placeholder]", "^"], "her" -> SuperscriptBox[
@@ -12756,47 +12779,51 @@ Cell[299768, 5286, 440, 10, 34, "Output"]
 Cell[300223, 5299, 2556, 65, 160, "Input"],
 Cell[CellGroupData[{
 Cell[302804, 5368, 3466, 86, 173, "Input"],
-Cell[306273, 5456, 3904, 73, 470, "Output"]
+Cell[306273, 5456, 3909, 73, 470, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[310214, 5534, 427, 12, 56, "Input"],
-Cell[310644, 5548, 329, 6, 34, "Output"]
+Cell[310219, 5534, 427, 12, 56, "Input"],
+Cell[310649, 5548, 329, 6, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[311010, 5559, 2340, 67, 246, "Input"],
-Cell[313353, 5628, 843, 14, 32, "Output"],
-Cell[314199, 5644, 12604, 214, 240, "Output"]
+Cell[311015, 5559, 2340, 67, 246, "Input"],
+Cell[313358, 5628, 843, 14, 32, "Output"],
+Cell[314204, 5644, 12604, 214, 240, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[326840, 5863, 12190, 212, 348, "Input"],
-Cell[339033, 6077, 12191, 212, 348, "Output"]
+Cell[326845, 5863, 12190, 212, 348, "Input"],
+Cell[339038, 6077, 12191, 212, 348, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[351261, 6294, 1224, 36, 81, "Input"],
-Cell[352488, 6332, 1361, 36, 37, "Output"],
-Cell[353852, 6370, 34809, 578, 236, "Output"]
+Cell[351266, 6294, 1224, 36, 81, "Input"],
+Cell[352493, 6332, 1361, 36, 37, "Output"],
+Cell[353857, 6370, 34809, 578, 236, "Output"]
 }, Open  ]],
-Cell[388676, 6951, 1662, 46, 82, "Input"],
+Cell[388681, 6951, 1662, 46, 82, "Input"],
 Cell[CellGroupData[{
-Cell[390363, 7001, 938, 23, 77, "Input"],
-Cell[391304, 7026, 618, 14, 240, "Output"]
+Cell[390368, 7001, 938, 23, 77, "Input"],
+Cell[391309, 7026, 618, 14, 240, "Output"]
 }, Open  ]],
-Cell[391937, 7043, 1575, 38, 143, "Input"],
+Cell[391942, 7043, 1575, 38, 143, "Input"],
 Cell[CellGroupData[{
-Cell[393537, 7085, 963, 25, 74, "Input"],
-Cell[394503, 7112, 113759, 1902, 273, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[508299, 9019, 868, 24, 74, "Input"],
-Cell[509170, 9045, 79551, 1335, 273, "Output"]
+Cell[393542, 7085, 963, 25, 74, "Input"],
+Cell[394508, 7112, 113759, 1902, 273, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[588758, 10385, 923, 24, 74, "Input"],
-Cell[589684, 10411, 97901, 1636, 273, "Output"]
+Cell[508304, 9019, 868, 24, 74, "Input"],
+Cell[509175, 9045, 79551, 1335, 273, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[687622, 12052, 10312, 238, 427, "Input"],
-Cell[697937, 12292, 6698, 128, 566, "Output"]
+Cell[588763, 10385, 923, 24, 74, "Input"],
+Cell[589689, 10411, 97901, 1636, 273, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[687627, 12052, 133, 2, 32, "Input"],
+Cell[687763, 12056, 156, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[687956, 12064, 10530, 241, 374, "Input"],
+Cell[698489, 12307, 7120, 136, 526, "Output"]
 }, Open  ]]
 }
 ]

@@ -106,16 +106,32 @@ g^{(2irr)}_{\Omega \tau \tau'} = \int_0^\beta g^{(2irr)}_{ t+\tau\downarrow, t\u
 \begin{equation}
 X_{\substack{\Omega K\\ \omega\omega'}} = \chi_{\substack{\Omega\\ \omega\omega'}} 
   + \frac{1}{\beta}\sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}
-    \overbrace{\left(\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{\chi^{(0)}_{\substack{\Omega K\\\omega''}}}
+    \overbrace{\left(\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{-\chi^{(0)}_{\substack{\Omega K\\\omega''}}}
     X_{\substack{\Omega K\\\omega''\omega'}}
 \end{equation}
 
-После обратного Фурье преобразования, получаем интегральное уравнение
+Делаем Фурье преобразования
 
 \begin{equation}
 \begin{split}
-X_{\substack{\Omega K\\ \tau\tau'}} &= \chi_{\substack{\Omega\\ \tau\tau'}} 
-  + \chi_{\substack{\Omega\\ \tau\tau'}}\int_0^\beta\mathrm{d}\tau''\chi^{(0)}_{\substack{\Omega K\\ -\tau''}}X_{\substack{\Omega K\\ \tau''\tau'}}
+X_{\substack{\Omega K\\ \tau\tau'}} &= 
+  \chi_{\substack{\Omega\\ \tau\tau'}} - \sum_{\omega\omega'\omega''}\chi_{\substack{\Omega\\\omega\omega''}}\chi^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\omega'}}e^{-i\omega\tau}e^{-i\omega'\tau'}\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} - \sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}\chi^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\tau'}}\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} - \sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}\chi^{(0)}_{\substack{\Omega K\\\omega''}}\left(\int_{\tau''}X_{\substack{\Omega K\\\tau''\tau'}}e^{i\omega''\tau''}\right)\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} - \int_{\tau''}\left(\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}\chi^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}\right)X_{\substack{\Omega K\\\tau''\tau'}}\\
+ \sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}\chi^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
+  &= \sum_{\omega''}\left(\int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}e^{i\omega''\tilde{\tau}''}\right)\chi^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
+   = \int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}\chi^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau''}}
+\end{split}
+\end{equation}
+
+Получаем интегральное уравнение
+
+\begin{equation}
+\begin{split}
+X_{\substack{\Omega K\\ \tau\tau'}} + 
+  \int_0^\beta\mathrm{d}\tau''\underbrace{\left(\int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}\chi^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau''}}\right)}_{A_{\tau\tau''}}X_{\substack{\Omega K\\\tau''\tau'}}
+  = \chi_{\substack{\Omega\\ \tau\tau'}}
 \end{split}
 \end{equation}
 
@@ -123,21 +139,9 @@ X_{\substack{\Omega K\\ \tau\tau'}} &= \chi_{\substack{\Omega\\ \tau\tau'}}
 можно будет заменить на систему $(N+1)^2$ линейных уравнений c $(N+1)^2$ неизвестными
 
 \begin{equation}
- X_{ij} + \sum_{k=0}^N a_{ijk}X_{kj} = b_{ij}
+ X_{ij} + \sum_{k=0}^N a_{ik}X_{kj} = b_{ij}
 \end{equation}
 
-где $X_{ij} = X_{\substack{\Omega K\\ \tau_i\tau_j}}, a_{ijk} = -\chi_{\substack{\Omega\\ \tau_i\tau_j}}\chi^{(0)}_{\substack{\Omega K\\ -\tau_k}}\Delta\tau,b_{ij}=\chi_{\substack{\Omega\\ \tau_i\tau_j}}$
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.6]{X1.eps}
-\caption[]{}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.6]{X2.eps}
-\caption[]{}
-\end{figure}
+где $X_{ij} = X_{\substack{\Omega K\\ \tau_i\tau_j}}, a_{ik} = \int_0^\beta\mathrm{d}{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau_i\tilde{\tau}''}}\chi^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau_k}},b_{ij}=\chi_{\substack{\Omega\\ \tau_i\tau_j}}$
 
 \end{document}
