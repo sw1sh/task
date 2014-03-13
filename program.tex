@@ -1,4 +1,7 @@
 \documentclass{article}
+
+\usepackage[margin={1cm,2cm,1cm,2cm}]{geometry}
+
 \usepackage[cp1251]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{amsmath,amsfonts}
@@ -10,7 +13,7 @@
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{ladder.eps}
+\includegraphics[scale=0.6]{ladder.png}
 \caption{Блок лестничной диаграммы}
 \label{ladder}
 \end{figure}
@@ -19,15 +22,28 @@
 В статьях по дуальной технике в узлах диаграмм стоят вершинные части примесной задачи, а линиями служат дуальные функции Грина.
 Нам будет удобнее в узлах разместить неприводимые части функций Грина, а линии, соответственно, домножить на $g^{-2}$.
 
-Таким образом, ``четырехугольный'' узел равен
+Неприводимая двухчастичная функция Грина
+\begin{equation}
+\chi^{\substack{\sigma_1\sigma_2\\\sigma_3\sigma_4}}(\tau_1,\tau_2,\tau_3,\tau_4) = \left<\mathrm{T}\hat{c}_1\hat{c}_2\hat{c}^\dagger_3\hat{c}^\dagger_4\right>
+\end{equation}
+
+Определим новые временные переменные, соответсвующие порядку операторов на рисунке \ref{operators}
+
 \begin{equation}
 \begin{split}
-g^{(2irr)}_{1234}
- &= \left<c^\dag_\downarrow(t+\tau) c_\uparrow(t) c^\dag_\uparrow(\tau') c_\downarrow(0)\right> \\
- &- \cancel{\left<c^\dag_\downarrow(t+\tau) c_\uparrow(t)\right>\left< c^\dag_\uparrow(\tau') c_\downarrow(0)\right>} \\
- &+ \left<c^\dag_\downarrow(t+\tau) c_\downarrow(0)\right>\left< c^\dag_\uparrow(\tau') c_\uparrow(t)\right>
+ \tau_3 \to 0 \\ 
+\tau_1 \to \tau_1 \\
+\tau_4 \to T \\
+\tau_2 \to \tau_2 - T 
 \end{split}
 \end{equation}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.3]{operators.png}
+\caption{}
+\label{operators}
+\end{figure}
 
 Линия, в нулевом приближении, равна
 \begin{equation}
@@ -44,8 +60,8 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 Таким образом, нам понадобятся величины 
 \begin{equation}
 \begin{split}
-\tilde{X}^{(0)}_{\Omega K \omega} = -\beta^{-1} \int_k  \tilde{G}_{\omega k} \tilde{G}_{\substack{\Omega+\omega\\K+k}} \\
-\tilde{X}^{(0)}_{\Omega K \tau} = \sum_\omega \tilde{X}^{(0)}_{\Omega K \omega} e^{-i \omega \tau},
+\tilde{X}^{(0)}_{\Omega K \omega} = -\int_k  \tilde{G}_{\omega k} \tilde{G}_{\substack{\Omega+\omega\\K+k}} \\
+\tilde{X}^{(0)}_{\Omega K \tau} = \beta^{-1}\sum_\omega \tilde{X}^{(0)}_{\Omega K \omega} e^{-i \omega \tau},
 \end{split}
 \end{equation}
 где суммирование $\sum_\omega$ проводится по мацубаровским частотам $\omega_n = \frac{(2n+1)\pi}{\beta}, n\in\mathbb{Z}$ и $\int_k \equiv \frac{1}{(2\pi)^2}\iint_{-\pi}^{\pi} \mathrm{d}^2k$.
@@ -59,20 +75,12 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 \int_0^\beta  \tilde{X}^{(0)}_{\Omega K \tau-\tau_1} \chi_{\substack{\Omega\\\tau_1\tau'}} d\tau_1
 \end{equation}
 
-{\bf Задача 1}. Хочется посмотреть на 3D график $\chi_{\substack{\Omega\\\tau\tilde{\tau}'}}$ при $\Omega=0$, и на график $X^{(0)}_{\Omega K \tau}$ при $\Omega=0$ для нескольких характерных $K$. 
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.6]{g2irr.eps}
-\caption[$\chi_$]{3D график $\chi_{\substack{\Omega\\\tau\tilde{\tau}'}}$}
-\end{figure}
-
 Легко заметить что $\tilde{G}_{\omega k}\xrightarrow[\omega\to\pm\infty]{}\epsilon_k$. Поэтому определим $\tilde{X}^{(0)'}$
 
 \begin{equation}
 \begin{split}
 \tilde{X}^{(0)'}_{\Omega K \tau} &= \tilde{X}^{(0)}_{\Omega K \tau} - \beta^{-1} \int_k \sum_\omega \epsilon_k \epsilon_{k+K} e^{-i \omega \tau} \\
-                                &= \tilde{X}^{(0)}_{\Omega K \tau} + \pi\;t\;\epsilon_K\;\delta(\tau) e^{-i \pi \frac{\tau}{\beta}}
+                                &= \tilde{X}^{(0)}_{\Omega K \tau} + \pi\;t\;\epsilon_K\;\delta(\tau)
 \end{split}
 \end{equation}
 
@@ -80,19 +88,19 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{XplotBeta}
+\includegraphics[scale=0.6]{XplotBeta.png}
 \caption[]{}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{XplotK}
+\includegraphics[scale=0.6]{XplotK.png}
 \caption[]{}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{XplotOmega}
+\includegraphics[scale=0.6]{XplotOmega.png}
 \caption[]{}
 \end{figure}
 
@@ -102,14 +110,16 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.6]{diagram.eps}
+\begin{description}
+ \item[] 
+\end{description}\includegraphics[scale=0.6]{diagram.png}
 \caption[]{}
 \end{figure}
 
 \begin{equation}
 X_{\substack{\Omega K\\ \omega\omega'}} = \chi_{\substack{\Omega\\ \omega\omega'}} 
-  + \sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}
-    \overbrace{\left(\beta^{-1}\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{-X^{(0)}_{\substack{\Omega K\\\omega''}}}
+  + \beta^{-1} \sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}
+    \overbrace{\left(\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{-X^{(0)}_{\substack{\Omega K\\\omega''}}}
     X_{\substack{\Omega K\\\omega''\omega'}}
 \end{equation}
 
@@ -118,14 +128,19 @@ X_{\substack{\Omega K\\ \omega\omega'}} = \chi_{\substack{\Omega\\ \omega\omega'
 \begin{equation}
 \begin{split}
 X_{\substack{\Omega K\\ \tau\tau'}} &= 
-  \chi_{\substack{\Omega\\ \tau\tau'}} - \sum_{\omega\omega'\omega''}\chi_{\substack{\Omega\\\omega\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\omega'}}e^{-i\omega\tau}e^{-i\omega'\tau'}\\
- &= \chi_{\substack{\Omega\\ \tau\tau'}} - \sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\tau'}}\\
- &= \chi_{\substack{\Omega\\ \tau\tau'}} - \sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}\left(\int_{\tau''}X_{\substack{\Omega K\\\tau''\tau'}}e^{i\omega''\tau''}\right)\\
- &= \chi_{\substack{\Omega\\ \tau\tau'}} - \int_{\tau''}\left(\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}\right)X_{\substack{\Omega K\\\tau''\tau'}}\\
- \sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
-  &= \sum_{\omega''}\left(\int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}e^{i\omega''\tilde{\tau}''}\right)X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
+  \chi_{\substack{\Omega\\ \tau\tau'}} - \beta^{-3} \sum_{\omega\omega'\omega''}\chi_{\substack{\Omega\\\omega\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\omega'}}e^{-i\omega\tau}e^{-i\omega'\tau'}\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} - \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\tau'}}\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} - \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}\left(\int_{\tau''}X_{\substack{\Omega K\\\tau''\tau'}}e^{i\omega''\tau''}\right)\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} - \int_{\tau''}\left(\beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}\right)X_{\substack{\Omega K\\\tau''\tau'}}\\
+ \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
+  &= \beta^{-1}\sum_{\omega''}\left(\int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}e^{i\omega''\tilde{\tau}''}\right)X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
    = \int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}X^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau''}}
 \end{split}
+\end{equation}
+
+Для вычисления $X^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau''}}$ понадобятся граничные условия периодичности
+\begin{equation}
+  X_{\beta+\tau} = -X_{\tau} = -X_{-\tau}
 \end{equation}
 
 Получаем интегральное уравнение
@@ -150,7 +165,7 @@ X_{\substack{\Omega K\\ \tau\tau'}} +
 \section{Расчет восприимчивости}
 
 \begin{equation}
- X_{\Omega K} = \int_\tau X^{(0)}_{\substack{\Omega K\\\tau}} + \int_{\tau\tau'}\int_{kk'} X^{(0)}_{\substack{\Omega K\\\tau}} X_{\substack{\Omega K\\\tau\tau'}} X^{(0)}_{\substack{\Omega K\\\tau'}}
+ X_{\Omega K} = \int_\tau X^{(0)}_{\substack{\Omega K\\\tau}} + \int_{\tau\tau'} X^{(0)}_{\substack{\Omega K\\\tau}} X_{\substack{\Omega K\\\tau\tau'}} X^{(0)}_{\substack{\Omega K\\\tau'}}
 \end{equation}
 
 
