@@ -117,11 +117,20 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 \end{figure}
 
 \begin{equation}
-X_{\substack{\Omega K\\ \omega\omega'}} = \chi_{\substack{\Omega\\ \omega\omega'}} 
-  + \beta^{-1} \sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}
+X_{\substack{\Omega K\\ \omega\omega'}}^\alpha = \chi_{\substack{\Omega\\ \omega\omega'}} 
+  + \beta^{-1} \sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}^\alpha
     \overbrace{\left(\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{-X^{(0)}_{\substack{\Omega K\\\omega''}}}
-    X_{\substack{\Omega K\\\omega''\omega'}}
+    X_{\substack{\Omega K\\\omega''\omega'}}^\alpha
 \end{equation}
+
+
+\begin{equation}
+\begin{split}
+  \chi_{\substack{\Omega\\ \omega\omega''}}^d =  \chi_{\substack{\Omega\\ \omega\omega''}}^{\uparrow\uparrow\uparrow\uparrow} + \chi_{\substack{\Omega\\ \omega\omega''}}^{\uparrow\uparrow\downarrow\downarrow} \\
+  \chi_{\substack{\Omega\\ \omega\omega''}}^m =  \chi_{\substack{\Omega\\ \omega\omega''}}^{\uparrow\uparrow\uparrow\uparrow} - \chi_{\substack{\Omega\\ \omega\omega''}}^{\uparrow\uparrow\downarrow\downarrow}
+\end{split}
+\end{equation}
+
 
 Делаем Фурье преобразования
 
@@ -165,7 +174,7 @@ X_{\substack{\Omega K\\ \tau\tau'}} +
 \section{Расчет восприимчивости}
 
 \begin{equation}
- X_{\Omega K} = \int_\tau X^{(0)}_{\substack{\Omega K\\\tau}} + \int_{\tau\tau'} X^{(0)}_{\substack{\Omega K\\\tau}} X_{\substack{\Omega K\\\tau\tau'}} X^{(0)}_{\substack{\Omega K\\\tau'}}
+ X_{\Omega K}^\alpha = \int_\tau X^{(0)}_{\substack{\Omega K\\\tau}} + \int_{\tau\tau'} X^{(0)}_{\substack{\Omega K\\\tau}} X_{\substack{\Omega K\\\tau\tau'}}^\alpha X^{(0)}_{\substack{\Omega K\\\tau'}}
 \end{equation}
 
 
