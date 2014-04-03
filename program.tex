@@ -20,21 +20,20 @@
 
 Рассматриваем лестничные ряды, составленные из изображенных на рисунке \ref{ladder} блоков.
 В статьях по дуальной технике в узлах диаграмм стоят вершинные части примесной задачи, а линиями служат дуальные функции Грина.
-Нам будет удобнее в узлах разместить неприводимые части функций Грина, а линии, соответственно, домножить на $g^{-2}$.
 
 Неприводимая двухчастичная функция Грина
 \begin{equation}
-\chi^{\substack{\sigma_1\sigma_2\\\sigma_3\sigma_4}}(\tau_1,\tau_2,\tau_3,\tau_4) = \left<\mathrm{T}\hat{c}_1\hat{c}_2\hat{c}^\dagger_3\hat{c}^\dagger_4\right>
+\chi^{\substack{\sigma_1\sigma_2\\\sigma_3\sigma_4}}(\tau_1,\tau_2,\tau_3,\tau_4) = \left<\mathrm{T}\hat{c}_1\hat{c}^\dagger_2\hat{c}_3\hat{c}^\dagger_4\right>
 \end{equation}
 
 Определим новые временные переменные, соответсвующие порядку операторов на рисунке \ref{operators}
 
 \begin{equation}
 \begin{split}
- \tau_3 \to 0 \\ 
-\tau_1 \to \tau_1 \\
-\tau_4 \to T \\
-\tau_2 \to \tau_2 - T 
+\tau_4 \to 0 \\
+\tau_3 \to \tau_1 \\
+\tau_2 \to T \\
+\tau_1 \to \tau_1 - T
 \end{split}
 \end{equation}
 
@@ -48,7 +47,7 @@
 Линия, в нулевом приближении, равна
 \begin{equation}
 \begin{split}
-&\tilde{G}_{\omega k} = g^{-2}_\omega \tilde{G}^{(0)}_{\omega k} = - (g_\omega-\epsilon^{-1}_k)^{-1},\;\text{где} \\
+&\tilde{G}^{(0)}_{\omega k} = - g^2_\omega(g_\omega-\epsilon^{-1}_k)^{-1},\;\text{где} \\
 g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\uparrow(0) \right>\right) e^{i\omega\tau} = \frac{-i\omega}{\omega^2+\mu^2} \\
 \epsilon_k &= - 2 t (\cos k_x+\cos k_y).
 \end{split}
@@ -66,25 +65,21 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 \end{equation}
 где суммирование $\sum_\omega$ проводится по мацубаровским частотам $\omega_n = \frac{(2n+1)\pi}{\beta}, n\in\mathbb{Z}$ и $\int_k \equiv \frac{1}{(2\pi)^2}\iint_{-\pi}^{\pi} \mathrm{d}^2k$.
 
-\begin{equation}
-\chi_{\substack{\Omega\\\tau\tilde{\tau}'}} = \int_0^\beta g^{(2irr)}_{ t+\tau\downarrow, t\uparrow,\tau'\uparrow,0\downarrow}  e^{i\Omega t} dt.
-\end{equation}
-
 Обсуждаемый блок представляет собой свертку
 \begin{equation}
 \int_0^\beta  \tilde{X}^{(0)}_{\Omega K \tau-\tau_1} \chi_{\substack{\Omega\\\tau_1\tau'}} d\tau_1
 \end{equation}
 
-Легко заметить что $\tilde{G}_{\omega k}\xrightarrow[\omega\to\pm\infty]{}\epsilon_k$. Поэтому определим $\tilde{X}^{(0)'}$
+%Легко заметить что $\tilde{G}_{\omega k}\xrightarrow[\omega\to\pm\infty]{}\epsilon_k$. Поэтому определим $\tilde{X}^{(0)'}$
 
-\begin{equation}
-\begin{split}
-\tilde{X}^{(0)'}_{\Omega K \tau} &= \tilde{X}^{(0)}_{\Omega K \tau} - \beta^{-1} \int_k \sum_\omega \epsilon_k \epsilon_{k+K} e^{-i \omega \tau} \\
-                                &= \tilde{X}^{(0)}_{\Omega K \tau} + \pi\;t\;\epsilon_K\;\delta(\tau)
-\end{split}
-\end{equation}
+%\begin{equation}
+%\begin{split}
+%\tilde{X}^{(0)'}_{\Omega K \tau} &= \tilde{X}^{(0)}_{\Omega K \tau} - \beta^{-1} \int_k \sum_\omega \epsilon_k \epsilon_{k+K} e^{-i \omega \tau} \\
+%                                &= \tilde{X}^{(0)}_{\Omega K \tau} + \pi\;t\;\epsilon_K\;\delta(\tau)
+%\end{split}
+%\end{equation}
 
-Таким образом мы получим сходящуюся сумму по $\omega$.
+%Таким образом мы получим сходящуюся сумму по $\omega$.
 
 \begin{figure}[h!]
 \centering
@@ -118,7 +113,7 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< c^\dag_\uparrow(\tau)c_\up
 
 \begin{equation}
 X_{\substack{\Omega K\\ \omega\omega'}}^\alpha = \chi_{\substack{\Omega\\ \omega\omega'}} 
-  + \beta^{-1} \sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}^\alpha
+  - \beta^{-1} \sum_{\omega''}\chi_{\substack{\Omega\\ \omega\omega''}}^\alpha
     \overbrace{\left(\int_k \tilde{G}_{\substack{\Omega+\omega''\\K+k}}\tilde{G}_{\substack{\omega''\\k}}\right)}^{-X^{(0)}_{\substack{\Omega K\\\omega''}}}
     X_{\substack{\Omega K\\\omega''\omega'}}^\alpha
 \end{equation}
@@ -137,10 +132,10 @@ X_{\substack{\Omega K\\ \omega\omega'}}^\alpha = \chi_{\substack{\Omega\\ \omega
 \begin{equation}
 \begin{split}
 X_{\substack{\Omega K\\ \tau\tau'}} &= 
-  \chi_{\substack{\Omega\\ \tau\tau'}} - \beta^{-3} \sum_{\omega\omega'\omega''}\chi_{\substack{\Omega\\\omega\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\omega'}}e^{-i\omega\tau}e^{-i\omega'\tau'}\\
- &= \chi_{\substack{\Omega\\ \tau\tau'}} - \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\tau'}}\\
- &= \chi_{\substack{\Omega\\ \tau\tau'}} - \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}\left(\int_{\tau''}X_{\substack{\Omega K\\\tau''\tau'}}e^{i\omega''\tau''}\right)\\
- &= \chi_{\substack{\Omega\\ \tau\tau'}} - \int_{\tau''}\left(\beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}\right)X_{\substack{\Omega K\\\tau''\tau'}}\\
+  \chi_{\substack{\Omega\\ \tau\tau'}} + \beta^{-3} \sum_{\omega\omega'\omega''}\chi_{\substack{\Omega\\\omega\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\omega'}}e^{-i\omega\tau}e^{-i\omega'\tau'}\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} + \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}X_{\substack{\Omega K\\\omega''\tau'}}\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} + \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}\left(\int_{\tau''}X_{\substack{\Omega K\\\tau''\tau'}}e^{i\omega''\tau''}\right)\\
+ &= \chi_{\substack{\Omega\\ \tau\tau'}} + \int_{\tau''}\left(\beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}\right)X_{\substack{\Omega K\\\tau''\tau'}}\\
  \beta^{-1}\sum_{\omega''}\chi_{\substack{\Omega\\\tau\omega''}}X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
   &= \beta^{-1}\sum_{\omega''}\left(\int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}e^{i\omega''\tilde{\tau}''}\right)X^{(0)}_{\substack{\Omega K\\\omega''}}e^{i\omega''\tau''}
    = \int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}X^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau''}}
@@ -156,7 +151,7 @@ X_{\substack{\Omega K\\ \tau\tau'}} &=
 
 \begin{equation}
 \begin{split}
-X_{\substack{\Omega K\\ \tau\tau'}} + 
+X_{\substack{\Omega K\\ \tau\tau'}} - 
   \int_0^\beta\mathrm{d}\tau''\underbrace{\left(\int_{\tilde{\tau}''}\chi_{\substack{\Omega\\\tau\tilde{\tau}''}}X^{(0)}_{\substack{\Omega K\\-\tilde{\tau}''-\tau''}}\right)}_{A_{\tau\tau''}}X_{\substack{\Omega K\\\tau''\tau'}}
   = \chi_{\substack{\Omega\\ \tau\tau'}}
 \end{split}
@@ -166,7 +161,7 @@ X_{\substack{\Omega K\\ \tau\tau'}} +
 можно будет заменить на систему $(N+1)^2$ линейных уравнений c $(N+1)^2$ неизвестными
 
 \begin{equation}
- X_{ij} + \sum_{k=0}^N a_{ik}X_{kj} = b_{ij}
+ X_{ij} - \sum_{k=0}^N a_{ik}X_{kj} = b_{ij}
 \end{equation}
 
 где $X_{ij} = X_{\substack{\Omega K\\ \tau_i\tau_j}}, a_{ik} = \int_\tau\chi_{\substack{\Omega\\\tau_i\tau}}X^{(0)}_{\substack{\Omega K\\-\tau-\tau_k}},b_{ij}=\chi_{\substack{\Omega\\ \tau_i\tau_j}}$
@@ -174,8 +169,26 @@ X_{\substack{\Omega K\\ \tau\tau'}} +
 \section{Расчет восприимчивости}
 
 \begin{equation}
- X_{\Omega K}^\alpha = \int_\tau X^{(0)}_{\substack{\Omega K\\\tau}} + \int_{\tau\tau'} X^{(0)}_{\substack{\Omega K\\\tau}} X_{\substack{\Omega K\\\tau\tau'}}^\alpha X^{(0)}_{\substack{\Omega K\\\tau'}}
+ X_{\Omega K}^\alpha = -\beta^{-1}\sum_\omega X^{(0)}_{\substack{\Omega K\\\omega}} + \beta^{-2}\sum_{\omega\omega'} X^{(0)}_{\substack{\Omega K\\\omega}} X_{\substack{\Omega\\\omega\omega'}}^\alpha X^{(0)}_{\substack{\Omega K\\\omega'}}
 \end{equation}
+
+\section{Лестничная диаграмма для $\tilde{\Sigma}$}
+
+\begin{equation}
+\begin{split}
+ &\tilde{\Sigma}^{\text{LDFA}}_{\sigma\omega k} = \\
+ &-\beta^{-1}\sum_{\omega'k'\sigma'}\chi^{\sigma\sigma\sigma'\sigma'}_{\omega'\omega\Omega=0}\tilde{G}_{\omega'k'} \\
+ &+\frac{1}{2}\beta^{-1}\sum_{\Omega K}\sum_{\omega'\sigma'}\chi^{\sigma\sigma'\sigma'\sigma}_{\omega'\omega\Omega}\tilde{G}_{\substack{\omega+\Omega\\k+K}}X^{(0)}_{\substack{\omega'\Omega\\K}}\left[2X^{\sigma\sigma\sigma'\sigma'}_{\substack{\omega\omega'\Omega\\K}}-\chi^{\sigma\sigma\sigma'\sigma'}_{\omega\omega'\Omega}\right] \\
+ &+\frac{1}{2}\beta^{-1}\sum_{\Omega K}\sum_{\omega'}\chi^{\sigma\sigma\overline{\sigma}\overline{\sigma}}_{\omega'\omega\Omega}\tilde{G}_{\substack{\omega+\Omega\\k+K}}X^{(0)}_{\substack{\omega'\Omega\\K}}\left[2X^{\sigma\overline{\sigma}\overline{\sigma}\sigma}_{\substack{\omega\omega'\Omega\\K}}-\chi^{\sigma\overline{\sigma}\overline{\sigma}\sigma}_{\omega\omega'\Omega}\right]
+\end{split}
+\end{equation}
+
+Дальше скелетная функция Грина вычисляется по следующей формуле
+
+\begin{equation}
+ \tilde{\mathbb{G}}^{-1}_{\omega k} = \tilde{G}^{-1}_{\omega k} - \tilde{\Sigma}_{\omega k} 
+\end{equation}
+
 
 
 \end{document}
