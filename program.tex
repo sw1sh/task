@@ -319,6 +319,7 @@ $\tilde{\mathbb{G}}^{-1}_{\omega k} = \tilde{G}^{-1}_{\omega k} - \tilde{\Sigma}
 \vspace{1cm}
 
 \begin{equation}
+\label{diag6}
 \begin{tikzpicture}[baseline=-5pt]\node{\diagsixempty};\end{tikzpicture}=
 \sum_{\sigma}\left[
 \begin{tikzpicture}[baseline=-5pt]\node{\tiny\diagsix{\uparrow}{\uparrow}{\uparrow}{\uparrow}{\uparrow}{\uparrow}{\sigma}{\sigma}{\uparrow}};\end{tikzpicture}+
@@ -332,6 +333,7 @@ $\tilde{\mathbb{G}}^{-1}_{\omega k} = \tilde{G}^{-1}_{\omega k} - \tilde{\Sigma}
 \vspace{1cm}
 
 \begin{equation}
+\label{diag3G}
 \begin{tikzpicture}[baseline=-5pt]\node{\diagthreeGempty};\end{tikzpicture}=
 \begin{tikzpicture}[baseline=-5pt]\node{\tiny\diagthreeG{\uparrow}{\downarrow}{\downarrow}{\uparrow}{\uparrow}{\downarrow}{\uparrow}{diag3G3}};\end{tikzpicture}+
 \sum_{\sigma}\left[
@@ -485,13 +487,21 @@ g_\omega &= \int_0^\beta \mathrm{d}\tau \left(-\left< \mathbf{c}_\uparrow(\tau)\
 \subfigure[]{\includegraphics[scale=0.3]{SigmaLDFA_Re}}
 \subfigure[]{\includegraphics[scale=0.3]{SigmaLDFA_Im}}
 \\
-\subfigure[]{\includegraphics[scale=0.3]{SigmaLDFA_loc_Re}}
-\subfigure[]{\includegraphics[scale=0.3]{SigmaLDFA_loc_Im}}
+\subfigure[]{\includegraphics[scale=0.6]{SigmaLDFA}}
 \caption{Зависимости действительной и мнимой части собственной энергии в лестничном приближении от импульса (a,b) и от частоты (c,d) после 30-и итераций внутреннего цикла (\ref{fig:DFcycle}). $\beta=10$, $U=4.0$, $t=0.25$}
 \label{SigmaLDFA}
 \end{figure}
 
 \section{Расчет диаграмм третьего порядка}
+
+\begin{figure}[H]
+\centering
+\subfigure[\ref{diag6}]{\includegraphics[scale=0.3]{Sigma6}}
+\subfigure[\ref{diag3G}]{\includegraphics[scale=0.3]{Sigma3G}}
+
+\caption{Зависимости действительной и мнимой части собственной энергии для двух диаграмм третьего порядка после 30-и итераций внутреннего цикла (\ref{fig:DFcycle}). $\beta=10$, $U=4.0$, $t=0.25$}
+\label{SigmaLDFA}
+\end{figure}
 
 \section{Заключение}
 
